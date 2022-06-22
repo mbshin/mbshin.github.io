@@ -36,7 +36,7 @@ git push -u origin main
 	* repo
 		* https://github.com/mbshin/mbshin.github.io/settings/pages
 	 * github page 주소
-		* 	https://mbshin.github.io/
+		* https://mbshin.github.io/
 
 사용할 branch 및 document root 지정이 가능하며 index.html 혹은 index.md를 노출시켜준다. index.html이 우선순위가 높다.
 
