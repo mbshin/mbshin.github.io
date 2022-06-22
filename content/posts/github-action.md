@@ -1,7 +1,7 @@
 ---
 title: "Github Action"
 date: 2022-06-22T17:12:25+09:00
-draft: true
+draft: false
 ---
 
 망분리 환경에서 1년 넘게 살다오니 Github Action을  잊고 살았다. 다시한번 컨셉 정리
