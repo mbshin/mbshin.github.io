@@ -21,7 +21,7 @@ Github가 제공하는 static site hosting 서비스이다. Jekyll, Hugo 등 sta
 
 * local에 git repo 생성 후 index.md를 github로 push 한다.
 ```bash
-mkdir mbshin.github.io && cd mbshin.github.io
+mkdir mbshin.github.io && cd mbshin.github.i
 git init
 echo "# mbshin.github.io" >> README.md
 echo "# First" >> index.md
