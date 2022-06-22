@@ -143,6 +143,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          cname: blog.mobum.me
 ```
 
 * actions-gh-pages action은 static 파일을 ph-pages 브랜치의 최상위 dir에 publish한다. GitHub Pages setting을 변경해야 한다. 
