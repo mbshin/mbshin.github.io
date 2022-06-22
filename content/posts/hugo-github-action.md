@@ -3,8 +3,6 @@ title: "Hugo를 활용한 GitHub Page 블로그 만들기"
 date: 2022-06-22T10:01:40+09:00
 draft: false
 ---
-
-# Hugo를 활용한 GitHub Page 블로그 만들기
 #blog #tech
 
 블로그 중도 포기를 여러번. 정리의 중요성이 갈수록 높아지는 시기이다. 나를 위한 기록이다.
