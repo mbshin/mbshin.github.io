@@ -38,6 +38,9 @@ swift 공부 전에 Xcode 필수 단축키 정리. 앱개발을 할지 네이티
 - Run Selected Test Case
   - ⌃⌥⌘U
 
+- Run Previous Test Case(s)
+  - ⌃⌥⌘G
+
 - Run All the Test Cases
   - ⌃⌘U
 
