@@ -39,7 +39,7 @@ class SudyUnitTestEssentials: XCTestCase {
 
 - 실행 키보드 shortcut
   - Selected 테스트 케이스 실행
-  - Ctrl + Option + Cmaand + U
+  - Ctrl + Option + Command + U
 
 ## Functions
 - 함수 파라미터 형식
@@ -103,3 +103,79 @@ class StudyFunctions: XCTestCase {
 
 ### refs
 - https://docs.swift.org/swift-book/LanguageGuide/Functions.html
+
+
+## Struct
+
+- struct는 class와 동일하게 properties와 methods를 포함
+- value type으로서 모든 값이 복제된 후 다른 변수나 파라미터에 할당
+- 기본적으로 strut를 사용하는 것을 권장. 상속, 형변환 등 클래스 기능이 꼭 필요한 경우에만 class 사용
+
+```swift
+struct User {
+    var username : String
+    var email : String
+    var age : Int
+}
+
+class StudyStruct: XCTestCase {
+    func testStructBasic() {
+        // given
+        let username = "first"
+        let email = "first@mail.com"
+        let age = 10
+        
+        // when
+        let userA = User(username: username, email: email, age: age)
+        
+        // then
+        XCTAssertEqual(userA.age, age)
+    }
+}
+```
+
+- Equivalence(==) 연산을 위해서는 Equatable Protocol 구현 필요
+- Protocol은 Java의 인터페이스와 유사
+- Struct는 Identy Operator(===) 사용 불가.
+- Value Type으로 인하여 변수에 할당시 모든 properties가 복제된 인스턴스 생성됨
+
+```swift
+struct EquatableUser : Equatable {
+    var username : String
+    var email : String
+    var age : Int
+    
+     // == 연산 지원
+    static func == (lhs: EquatableUser, rhs: EquatableUser) -> Bool {
+        return lhs.age == rhs.age && lhs.email == rhs.email && lhs.username == rhs.username
+       }
+}
+```
+
+```swift
+    func testStructEquality() {
+        // Given
+        let username = "first"
+        let email = "first@mail.com"
+        let age = 10
+        
+        // when
+        let userA = EquatableUser(username: username, email: email, age: age)
+        let userB = EquatableUser(username: username, email: email, age: age)
+    
+        XCTAssertTrue(userA == userB) // Equatable Protocol 구현시 Equivalence Operators(==) 연산 가능
+    }
+    func testStructValueType() {
+        // Given
+        let username = "first"
+        let email = "first@mail.com"
+        let age = 10
+        
+        // when
+        let userA = EquatableUser(username: username, email: email, age: age)
+        var userB = userA // Value Type - 복제 진행
+        userB.age = 20
+    
+        XCTAssertNotEqual(userA, userB)
+    }
+```
