@@ -26,3 +26,34 @@ swift 공부 전에 Xcode 필수 단축키 정리. 앱개발을 할지 네이티
 ## File Navigation
 * Open Quickly (파일 빨리 열기)
 	* Shift + Command + O
+
+## Unit Test
+
+- Build and Run All Test Cases
+  - ⌘U
+
+- Build the Test Target
+  - ⇧⌘U
+
+- Run Selected Test Case
+  - ⌃⌥⌘U
+
+- Run All the Test Cases
+  - ⌃⌘U
+
+## Navitation
+
+* Show/Hide Debug
+	* Shirt + Command + Y
+
+* Re-indent code
+	* Ctrl + i
+
+* Open in Next Editor
+Command option ,
+
+* Move Focus to Next Editor
+Crtl + `
+
+* Move Focus to Editor
+Command + J
