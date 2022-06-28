@@ -5,7 +5,7 @@ draft: false
 ---
 
 ## Unit Testing
-Swift 문법 공부를 위해서 Unit Test 프레임워크의 기본적인 사용법을 우선 정리. 유닛 테스트로 내용을 체계적으로 정리 가능
+Swift 문법 공부를 위해서 Unit Test 프레임워크의 기본적인 사용법을 우선 정리. 유닛 테스트로 기본 문법 내용을 체계적으로 정리 가능
 
 ```swift
 import XCTest // unit test 프레임워크
