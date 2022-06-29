@@ -47,16 +47,16 @@ swift 공부 전에 Xcode 필수 단축키 정리. 앱개발을 할지 네이티
 ## Navitation
 
 * Show/Hide Debug
-	* Shirt + Command + Y
+	* Shift + Command + Y
 
 * Re-indent code
 	* Ctrl + i
 
 * Open in Next Editor
-Command option ,
+  - Command option ,
 
 * Move Focus to Next Editor
-Crtl + `
+  - Crtl + `
 
 * Move Focus to Editor
-Command + J
+  - Command + J

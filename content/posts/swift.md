@@ -11,7 +11,7 @@ Swift 문법 공부를 위해서 Unit Test 프레임워크의 기본적인 사�
 import XCTest // unit test 프레임워크
 @testable import Basic // app의 함수 호출을 위해서 testable import 실행
 
-class SudyUnitTestEssentials: XCTestCase {
+class StudyUnitTestEssentials: XCTestCase {
     func testEqual() throws {
         // given
         let number = 1
@@ -42,6 +42,7 @@ class SudyUnitTestEssentials: XCTestCase {
   - Ctrl + Option + Command + U
 
 ## Functions
+
 - 함수 파라미터 형식
   - label parameterName : Type = "default parameter value"
   - label은 함수 호출시 사용하는 일종의 alias 개념으로 함수 호출을 영어 문장처럼 표현 가능
@@ -109,7 +110,7 @@ class StudyFunctions: XCTestCase {
 
 - struct는 class와 동일하게 properties와 methods를 포함
 - value type으로서 모든 값이 복제된 후 다른 변수나 파라미터에 할당
-- 기본적으로 strut를 사용하는 것을 권장. 상속, 형변환 등 클래스 기능이 꼭 필요한 경우에만 class 사용
+- 기본적으로 struct 사용하는 것을 권장. 상속, 형변환 등 클래스 기능이 꼭 필요한 경우에만 class 사용
 
 ```swift
 struct User {
@@ -179,3 +180,100 @@ struct EquatableUser : Equatable {
         XCTAssertNotEqual(userA, userB)
     }
 ```
+
+
+## Class
+
+Struct와 동일하게 Propereites와 methods를 member로 가진다. 구조체와 구별되는 특징은
+  - Inheritance
+  - Type Casting
+  - Deinitilizer
+  - Reference Counting 
+
+```swift
+class ClassUser {
+    var username : String
+    var email : String
+    var age : Int
+    init(username: String, email: String, age: Int) { // constructor
+        self.username = username
+        self.email = email
+        self.age = age
+    }
+}
+
+class StudyClass: XCTestCase {
+    func testBasic() {
+        // given
+        let username = "first"
+        let email = "first@mail.com"
+        let age = 10
+        
+        // when
+        let userA = ClassUser(username: username, email: email, age: age)
+        
+        // then
+        XCTAssertEqual(userA.age, age)
+    }
+     /**
+    Study Identity Operator
+     */
+    func testIdentity() {
+        // given
+        let username = "first"
+        let email = "first@mail.com"
+        let age = 10
+        
+        // when
+        let userA = ClassUser(username: username, email: email, age: age)
+        let userB = userA
+        
+        XCTAssertTrue(userA === userB) // Identity Operator - same class reference
+    }
+}    
+```
+
+- constructor를 사용하여 변수 초기화를 하지 않는 경우 property 초기값 지정 필요
+- instances가 동일한 레퍼런스를 가지고 있는지 확인하는 Identity Operator(===) 지원
+
+
+```swift
+class EquitableClassUser : Equatable{
+    var username : String
+    var email : String
+    var age : Int
+    
+    init(username: String, email: String, age: Int) {
+        self.username = username
+        self.email = email
+        self.age = age
+    }
+    
+    static func == (lhs: EquitableClassUser, rhs: EquitableClassUser) -> Bool {
+        return lhs.age == rhs.age && lhs.email == rhs.email && lhs.username == rhs.username
+    }
+}
+
+class StudyClass: XCTestCase {
+  /**
+     Study Equivalce Operator
+     - Equivalnce Protocol shold be implemented to compare class instances
+     */
+    func testEquivalance() {
+        // given
+        let username = "first"
+        let email = "first@mail.com"
+        let age = 10
+        
+        // when
+        let userA = EquitableClassUser(username: username, email: email, age: age)
+        let userB = EquitableClassUser(username: username, email: email, age: age)
+        
+        XCTAssertTrue(userA == userB) // Equivalence Operator - Implemented Equitable Protocol
+    }
+}
+```
+
+- Equlivance 연산을 위해서는 Struct와 동일하게 Equitable Protocol을 구현해야 한다. 
+
+
