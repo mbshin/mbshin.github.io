@@ -1,5 +1,5 @@
 ---
-title: "Swift"
+title: "Swift Basics"
 date: 2022-06-24T17:37:56+09:00
 draft: false
 ---
@@ -277,3 +277,4 @@ class StudyClass: XCTestCase {
 - Equlivance 연산을 위해서는 Struct와 동일하게 Equitable Protocol을 구현해야 한다. 
 
 
+## Optional
