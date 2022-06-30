@@ -1,7 +1,7 @@
 ---
 title: "Swift Metatype"
 date: 2022-06-30T13:39:58+09:00
-draft: true
+draft: false
 ---
 
 Swift의 Metatype은 Class, Struct, Enumeration등의 Type에 관한 정보를 가진다. Java의 refelection과 유사한 개념이다. Metatype을 이용하여 class members(propeties, methods)를 접근할수 있다. Facotry Method, Json Decoder 등에서 사용한다. 
