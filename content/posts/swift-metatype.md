@@ -73,3 +73,9 @@ class StudyMetatype: XCTestCase {
 }    
 ```
 
+
+## References
+
+* https://docs.swift.org/swift-book/ReferenceManual/Types.html
+* https://swiftrocks.com/whats-type-and-self-swift-metatypes
+* https://medium.com/swiftcraft/introduction-to-swift-metatypes-21949842d7a
